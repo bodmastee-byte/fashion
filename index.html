@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Store</title>
+    <!-- Use Tailwind CSS for modern, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Using a dark, professional background for the gold and black theme */
+            background-color: #1a1a1a;
+        }
+    </style>
+</head>
+<body class="text-gray-100">
+
+    <!-- Header Section -->
+    <header class="bg-gray-900 shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-yellow-400 hover:text-yellow-500 transition-colors">
+                Awesome Store
+            </a>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-gray-300 hover:text-yellow-400 transition-colors">Home</a>
+                <a href="#" class="text-gray-300 hover:text-yellow-400 transition-colors">Shop</a>
+                <a href="#" class="text-gray-300 hover:text-yellow-400 transition-colors">About</a>
+                <a href="#" class="relative">
+                    <!-- Shopping Cart Icon (using a simple SVG) -->
+                    <svg class="h-6 w-6 text-gray-300 hover:text-yellow-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.183 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-yellow-400 text-gray-900 text-xs rounded-full h-4 w-4 flex items-center justify-center opacity-0 transition-opacity">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gray-800 py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold text-yellow-400 mb-4">Shop Our New Collection</h1>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Discover the latest trends and styles with our exclusive new arrivals. Quality and style, guaranteed.</p>
+            <a href="#" class="bg-yellow-400 text-gray-900 py-3 px-8 rounded-full font-semibold text-lg hover:bg-yellow-500 transition-colors shadow-lg">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- Main Content Section - Product Grid -->
+    <main class="container mx-auto px-6 py-12">
+        <h2 class="text-4xl font-bold text-center text-yellow-400 mb-8">Featured Products</h2>
+        
+        <!-- Grid for Products -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- Product Card: Stylish Hoodie -->
+            <div class="product-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img src="https://placehold.co/600x400/111827/FDE047?text=Stylish+Hoodie" alt="Stylish Hoodie Image" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-white">Stylish Hoodie</h3>
+                    <p class="text-gray-300 mt-1">$49.99</p>
+                    <button class="add-to-cart-btn mt-4 w-full bg-yellow-400 text-gray-900 py-2 px-4 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Product Card: Modern T-Shirt -->
+            <div class="product-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img src="https://placehold.co/600x400/111827/FDE047?text=Modern+T-Shirt" alt="Modern T-Shirt Image" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-white">Modern T-Shirt</h3>
+                    <p class="text-gray-300 mt-1">$29.99</p>
+                    <button class="add-to-cart-btn mt-4 w-full bg-yellow-400 text-gray-900 py-2 px-4 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card: Cozy Sweatpants -->
+            <div class="product-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img src="https://placehold.co/600x400/111827/FDE047?text=Cozy+Sweatpants" alt="Cozy Sweatpants Image" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-white">Cozy Sweatpants</h3>
+                    <p class="text-gray-300 mt-1">$59.99</p>
+                    <button class="add-to-cart-btn mt-4 w-full bg-yellow-400 text-gray-900 py-2 px-4 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card: Sleek Jacket -->
+            <div class="product-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img src="https://placehold.co/600x400/111827/FDE047?text=Sleek+Jacket" alt="Sleek Jacket Image" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-white">Sleek Jacket</h3>
+                    <p class="text-gray-300 mt-1">$89.99</p>
+                    <button class="add-to-cart-btn mt-4 w-full bg-yellow-400 text-gray-900 py-2 px-4 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- New Product Card: Baby Stuffed Animal -->
+            <div class="product-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img src="https://placehold.co/600x400/111827/FDE047?text=Stuffed+Animal" alt="Stuffed Animal Image" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-white">Soft Plush Toy</h3>
+                    <p class="text-gray-300 mt-1">$19.99</p>
+                    <button class="add-to-cart-btn mt-4 w-full bg-yellow-400 text-gray-900 py-2 px-4 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- New Product Card: Casual Shirt -->
+            <div class="product-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img src="https://placehold.co/600x400/111827/FDE047?text=Casual+Shirt" alt="Casual Shirt Image" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-white">Casual Shirt</h3>
+                    <p class="text-gray-300 mt-1">$35.00</p>
+                    <button class="add-to-cart-btn mt-4 w-full bg-yellow-400 text-gray-900 py-2 px-4 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- New Product Card: Classic Trousers -->
+            <div class="product-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img src="https://placehold.co/600x400/111827/FDE047?text=Classic+Trousers" alt="Classic Trousers Image" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-white">Classic Trousers</h3>
+                    <p class="text-gray-300 mt-1">$65.00</p>
+                    <button class="add-to-cart-btn mt-4 w-full bg-yellow-400 text-gray-900 py-2 px-4 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- New Product Card: Wooden Blocks Toy -->
+            <div class="product-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img src="https://placehold.co/600x400/111827/FDE047?text=Baby+Blocks" alt="Baby Blocks Image" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-white">Wooden Block Set</h3>
+                    <p class="text-gray-300 mt-1">$25.00</p>
+                    <button class="add-to-cart-btn mt-4 w-full bg-yellow-400 text-gray-900 py-2 px-4 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white mt-12 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2023 Awesome Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for "Add to Cart" functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+            const cartCountElement = document.getElementById('cart-count');
+            let cartCount = 0;
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    cartCount++;
+                    cartCountElement.textContent = cartCount;
+                    cartCountElement.style.opacity = '1';
+                    
+                    // Create a simple custom message box instead of alert()
+                    const messageBox = document.createElement('div');
+                    messageBox.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transition-all duration-300 transform translate-x-full opacity-0';
+                    messageBox.textContent = 'Item added to cart!';
+                    document.body.appendChild(messageBox);
+                    
+                    // Animate the message box in and then fade out
+                    setTimeout(() => {
+                        messageBox.style.transform = 'translateX(0)';
+                        messageBox.style.opacity = '1';
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        messageBox.style.transform = 'translateX(120%)';
+                        messageBox.style.opacity = '0';
+                        setTimeout(() => messageBox.remove(), 500);
+                    }, 2500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
